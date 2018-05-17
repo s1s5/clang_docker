@@ -5,7 +5,7 @@ set -eu  # <= 0以外が返るものがあったら止まる, 未定義の変数
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-export LLVM_HASH=$1
+export LLVM_HASH=${1:-release_50}
 export LLVM_LLD_HASH=${LLVM_LLD_HASH:-${LLVM_HASH}}
 export LLVM_LLDB_HASH=${LLVM_LLDB_HASH:-${LLVM_HASH}}
 export LLVM_POLLY_HASH=${LLVM_POLLY_HASH:-${LLVM_HASH}}
