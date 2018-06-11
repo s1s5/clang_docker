@@ -15,4 +15,8 @@ docker tag ubuntu:18.04 llvm-base
 docker build . -t llvm:${RELEASE}
 docker tag llvm:${RELEASE} s1s5/llvm:${RELEASE}
 docker push s1s5/llvm:${RELEASE}
+
+docker tag s1s5/llvm:${RELEASE} opencv-base
+cd opencv
+docker build -f Dockerfile -t s1s5/llvm:${RELEASE}_with_opencv .
 popd
